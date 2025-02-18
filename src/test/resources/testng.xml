@@ -1,0 +1,48 @@
+
+<!--
+ Este configurador ejecuta test de distintas clases
+
+
+<suite name="MiSuite">
+    <test name="MiTest">
+        <classes>
+            <class name="AnotacionesTestNG_Tests">
+                <methods>
+                    <include name="unTest"/>
+                </methods>
+            </class>
+            <class name="AprendiendoTestNGTests">
+                <methods>
+                    <include name="testSuma"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-->
+
+
+<!-- Este configurador ejecuta test de distintas clases en paralelo
+<suite name="SuiteParalela" parallel="classes" thread-count="2">
+    <test name="TestParalelo">
+        <classes>
+            <class name="AnotacionesTestNG_Tests"/>
+            <class name="AprendiendoTestNGTests"/>
+        </classes>
+    </test>
+</suite>
+        -->
+
+        <!-- Este configurador ejecuta test de  en paralelo de la misma clase-->
+<suite name="SuiteParalela" parallel="methods" thread-count="2">
+<test name="TestParalelo">
+    <parameters>
+        <parameter name="MaxResponseSec" value="40"/>
+        <parameter name="MinResponseSec" value="1"/>
+    </parameters>
+    <classes>
+        <class name="AnotacionesTestNG_Tests"/>
+        <class name="AprendiendoTestNGTests"/>
+    </classes>
+</test>
+</suite>
