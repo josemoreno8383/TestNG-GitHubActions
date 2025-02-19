@@ -20,7 +20,7 @@ public class AprendiendoTestNGTests {
 
     @Test
     public void testSuma(){
-        int resultado = 2 + 3;
+        int resultado = 2 + 2;
         System.out.println("testSuma");
         Assert.assertEquals(resultado,5,"La suma debe ser 5");
 
